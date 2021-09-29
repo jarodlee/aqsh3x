@@ -1,0 +1,129 @@
+
+.navigation  {
+	z-index: 999;
+	position: relative;
+  	padding: 35px 0;
+
+  	.sf-menu {
+		z-index: 990;
+		text-align: center;
+		position: relative;
+	}
+
+	nav {
+	 position:relative;
+	 padding: 0;
+	}
+}
+
+.select-menu {
+	display: none !important;
+}
+
+.sf-menu ul {
+	position:absolute;
+	top:-999px; 
+	display:none;
+}
+
+.sf-menu>li>ul>li {
+  	float: none;
+  	position: static;
+}
+
+.sf-menu>li {
+	float: left;
+	font-weight: 300;
+	position: relative;
+	font-size: 18px;
+	line-height: 22px;
+
+	&+li {
+		margin-left: 43px;
+	}
+
+	&+li:after {
+		content: '';
+		background: url(../images/menu_sep.png) 0 0 no-repeat;
+		height: 5px;
+		width: 5px;
+		position: absolute;
+		left: -20px;
+		top: 10px;
+	}
+
+
+	&>a{
+		position: relative;
+		color: @white; 
+		text-align: center;
+
+		&.sf-with-ul:after {	
+			content: '';
+			position: absolute;
+			width: 5px;
+			bottom: 15px;
+			left: 50%;
+			bottom: -5px;
+			pointer-events: none;
+			z-index: 999;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 3px 3px 0 3px;
+			border-color: #fff transparent transparent transparent;
+		}	
+	}
+}
+
+.sf-menu>li.sfHover>a, 
+.sf-menu>li.current>a, 
+.sf-menu>li>a:hover  {
+	color: @color1;
+}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+
+@media only screen and (max-width: 995px) {
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.navigation {
+		float: none !important;
+		padding: 10px 0px 10px !important;
+		clear: both;
+		margin: 0;
+		width: auto;
+		min-height: 0px;
+
+		nav{
+	  		border: none !important;
+			float:none !important;
+			font:12px/15px Arial, Helvetica, sans-serif;
+			text-transform:uppercase;
+			color:#927c67;
+			margin: 0 auto;
+			padding-left: 0 !important;
+
+			ul {
+				border: none;
+			}
+		}
+	}
+
+	.sf-menu{display:none !important; float: none;}
+
+	.select-menu {
+		font:12px/15px Arial, Helvetica, sans-serif;
+		color:#202020;
+		width:100%;
+		margin: 0 auto;
+		float: none;
+	    outline: none;
+	    display: block !important;
+		border: 2px solid #fff ;
+	}
+}

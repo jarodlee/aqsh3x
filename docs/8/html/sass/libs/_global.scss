@@ -1,0 +1,47 @@
+/*
+ * Global Styles
+ */
+
+$browser-context: 14; // Default
+
+body {
+
+	font-family: $primary-font;
+	font-size   : 14px;
+	font-weight : 300;
+	color: $body-color;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: $secondary-color;
+	font-weight: 600;
+	font-family: $primary-font;
+}
+
+a { text-decoration: none }
+
+address { font-style: normal }
+
+p{ margin-top: 0 }
+
+form{
+	input:not([type="submit"]),textarea{
+		border: none;
+		border-bottom: 2px solid $footer-color;
+		padding: 10px 10px;
+		background-color: none;
+		display: block;
+		margin-bottom: 10px;
+		outline: none;
+		transition: .3s ease;
+
+		&:focus{
+			border-color: $accent-color;
+		}
+	}
+	textarea{resize: vertical;}
+}
+.col-md-5.col-md-offset-1{clear: both; padding-top: 30px}
+
+#site-content{overflow-x:hidden}

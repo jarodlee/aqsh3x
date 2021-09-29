@@ -1,0 +1,48 @@
+/*
+ * Header Styles
+ */
+ .site-header{
+ 	@include clearfix;
+ 	padding: 30px 0;
+ 	background-color: white;
+
+ 	.button{
+ 		@media screen and (max-width:480px){
+ 			@include em(10);
+ 			margin-top: 20px;
+ 		}
+ 	}
+ }
+
+/* Branding style */
+ #branding{
+ 	float: left;
+
+ 	.branding-copy,.logo{
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 	}
+ 	.logo{
+ 		margin-right: 10px;
+ 	}
+ 	.site-title{
+ 		margin: 0;
+ 		@include em(18);
+ 		font-weight: 400;
+
+ 		a{color: inherit}
+ 	}
+ 	.site-description{
+ 		@include em(11);
+ 		text-transform: uppercase;
+ 	}
+ }
+
+ .badges{
+ 	float: right;
+
+ 	img{
+ 		vertical-align: middle;
+ 		margin-left: 30px;
+ 	}
+ }

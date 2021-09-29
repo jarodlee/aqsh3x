@@ -1,0 +1,25 @@
+/*
+ * Global Styles
+ */
+
+body {
+	color            : $body-color;
+	background-color : $bg-color;
+	font-size        : 16px;
+	font-family      : $primary-font;
+	font-weight      : 400;
+	line-height      : normal;
+}
+
+h1,h2,h3,h4,h5,h6{ color: $strong-color }
+
+a { 
+	text-decoration: none;
+	transition: .3s ease;
+	color: inherit;
+	&:hover{ color: $accent-color }
+}
+
+address { font-style: normal }
+
+p{ margin-top: 0 }

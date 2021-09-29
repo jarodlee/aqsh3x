@@ -1,0 +1,10 @@
+/*
+ * Footer Styles
+ */
+
+ .site-footer{
+ 	padding: 50px 0;
+ 	text-align: center;
+ 	font-weight: 400;
+ 	@include em(15);
+ }

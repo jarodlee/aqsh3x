@@ -1,0 +1,161 @@
+/*
+ * Reusable Components Style
+ */
+
+/* button style */
+.button{
+	display:inline-block;
+	padding: 10px 20px;
+	background-color: $accent-color;
+	color: white;
+	border-radius: 5px;
+	text-transform: uppercase;
+
+	&.large{
+		padding: 20px 40px;
+		@include em(18);
+	}
+
+	&:hover{
+		color: white;
+		background-color: lighten($accent-color,10%);
+	}
+
+	&.muted{
+		background-color: $form-bg;
+		color: $body-color;
+
+		&:hover{
+			background-color: darken($form-bg,5%);
+		}
+	}
+}
+/* fullwidth-block style */
+.fullwidth-block{
+	padding: 70px 0;
+}
+
+.check-list{
+	list-style: none;
+	padding-left: 0;
+	li{
+		margin-bottom: 10px;
+	}
+	.fa{
+		margin-right: 10px;
+		color: $accent-color;
+	}
+}
+
+/* Form style */
+form{
+	.field{
+		display: table;
+		width: 100%;
+		margin-bottom: 10px;
+
+		label,input{
+			display: table-cell;
+		}
+		label{
+			width: 100px;
+		}
+		input{width: 100%}
+	}
+	.action{
+		margin-top: 50px;
+		text-align: center;
+	}
+	input:not([type="submit"]),select,textarea{
+		padding: 10px;
+		border: 1px solid $form-border;
+		border-radius: 5px;
+		transition: .3s ease;
+		outline: none;
+		display: block;
+		width:100%;
+		margin-bottom: 10px;
+		padding-left: 50px;
+		box-shadow: 0 1px 0 rgba(0,0,0,0);
+		@include em(15);
+
+		&:hover,&:focus{
+			background-color: $form-bg;
+			border-color: $form-bg;
+			box-shadow: 0 1px 0 rgba(0,0,0,.3);
+		}
+	}
+
+	select{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: url(images/select.png) no-repeat right center;
+		padding-right: 30px; 
+	}
+
+	input[type="submit"],button{
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background: $accent-color;
+		color: white;
+		outline: none;
+		transition: .3s ease;
+
+		&:hover,&:focus{
+			background-color: lighten($accent-color, 5%);
+		}
+	}
+	
+	.form-name{background: url(images/icon-user.png) no-repeat left center}
+	.form-company{background: url(images/icon-factory.png) no-repeat left center}
+	.form-email{background: url(images/icon-envelope.png) no-repeat left center}
+	.form-phone{background: url(images/icon-phone.png) no-repeat left center}
+	.form-country{
+		background: url(images/icon-globe.png) no-repeat left center, url(images/select.png) no-repeat right center;
+	}
+ }
+
+.testimonial{
+	position: relative;
+	padding-left: 100px;
+	margin-bottom: 30px;
+
+	.avatar{
+		@include size(78px);
+		border-radius: 50%;
+		overflow: hidden;
+		position: absolute;
+		left:0;
+		top:0;
+		img{
+			display: block;
+		}
+	}
+
+	.testimonial-content{
+		background-color: #ececec;
+		border-radius: 5px;
+		padding: 20px;
+		position: relative;
+
+		.fn{
+			color: $strong-color;
+			font-weight: 400;
+		}
+		p{line-height: 24px}
+
+		&:before{
+			content:" ";
+			width:0;
+			border-style: solid;
+			border-width: 10px;
+			border-color: transparent #ececec transparent transparent;
+			position: absolute;
+			left: -20px;
+			top: 30px;
+		}
+
+	}
+}

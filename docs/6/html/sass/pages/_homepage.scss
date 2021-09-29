@@ -1,0 +1,58 @@
+.request-form{
+	.field{
+		margin-bottom: 23px;
+	}
+	label{
+		width: 170px;
+		@media screen and (max-width: 480px){ width: 100px }
+
+	}
+	input,select{
+		width: 100%;
+	}
+
+	.no-label{
+		padding-left: 170px;
+		@media screen and (max-width: 480px){ padding-left: 100px }
+		input{margin-top: 20px}
+	}
+}
+
+.best-students-grid{
+	@include clearfix;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+
+	margin: 0 -10px;
+
+	li{
+		width: 33.3333%;
+		float: left;
+		padding: 10px;
+
+		@media screen and (max-width: 480px){ width: 50% }
+		
+		a{
+			display: block;
+			border-radius: 5px;
+			overflow: hidden;
+			background: #c3cbbe;
+			color: #9ba396;
+			text-decoration: none;
+			text-align: center;
+		}
+		img{
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.more-student{
+		line-height: 130px;
+		@include em(18);
+		box-sizing: border-box;
+	}
+}

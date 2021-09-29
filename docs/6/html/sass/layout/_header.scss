@@ -1,0 +1,245 @@
+.site-header{
+	@include clearfix;
+	position: relative;
+	padding: 30px 0 40px;
+	margin-bottom: 50px;
+	background-color: #475d36;
+	background-image: url(images/chalkboard.jpg);
+	background-attachment: fixed;
+	background-position: bottom center;
+	box-shadow: 0 30px 40px rgba(0,0,0,.2);
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { background: url(images/chalkboard@2x.jpg) repeat-x; }
+
+	&:after{
+		content:" ";
+		width: 100%;
+		height: 53px;
+		position: absolute;
+		bottom:0;
+		left:0;
+		background-color: #ccb47e;
+		background-image: linear-gradient(180deg, #cab27c 70%,#c1975b 15%, #ad744d 15%);
+		background-image: url(images/wood.png);
+		background-repeat: repeat-x;
+		z-index: 9;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { background: url(images/wood@2x.png) repeat-x; }
+	}
+}
+.primary-header{
+	background: url(images/line.png) repeat-x bottom center;
+	padding-bottom: 30px;
+}
+#branding{
+	@include clearfix;
+	float: left;
+	color: white;
+	text-decoration: none;
+	white-space: nowrap;
+
+	img{
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.site-title{
+		display: inline-block;
+		margin: 0;
+		@include em(15);
+		font-weight: 300;
+		text-shadow: 0 1px 2px rgba(0,0,0,.3);
+	}
+}
+
+.main-navigation{
+	float: right;
+	position: relative;
+	margin-top: 10px;
+	.menu{
+		list-style: none;
+		margin:0;
+		padding-left:0;
+
+		@media screen and (min-width: 991px){ display: block!important }
+		@media screen and (max-width: 990px){ display: none }
+	}
+
+	.menu-item{
+		float: left;
+		margin:0 0 0 5px;
+
+		a{
+			@include em(17);
+			color: white;
+			text-decoration: none;
+			padding: 10px 20px;
+			border-radius: 3px;
+		}
+
+		&.current-menu-item,&:hover{
+			a{
+				color: #72664c;
+				background: #f7eacc;
+				background: linear-gradient(180deg, #f7eacc, #cfbe97);
+				box-shadow: 0 2px 1px rgba(0,0,0,.3);
+			}
+		}
+	}
+
+	.menu-toggle{
+		border: none;
+		color: #72664c;
+		background: #f7eacc;
+		padding: 10px 20px;
+		border-radius:3px;
+		background: linear-gradient(180deg, #f7eacc, #cfbe97);
+		box-shadow: 0 2px 1px rgba(0,0,0,.3);
+		display: none;
+		outline: none;
+
+		&:active{
+			background: linear-gradient(0deg, #f7eacc, #cfbe97);
+		}
+
+		@media screen and (max-width: 990px){ display: block }
+	}
+}
+
+.mobile-navigation{
+	clear: both;
+	padding: 30px 0;
+	display: none;
+	@media screen and (min-width: 991px){ display: none!important }
+	.menu{
+		list-style: none;
+		margin:0;
+		padding-left:0;
+		background: rgba(0,0,0,.3);
+		border-radius: 5px;
+		overflow: hidden;
+		text-align: center;
+
+		a{
+			display: block;
+			padding: 10px 0;
+			color: white;
+			text-decoration: none;
+			@include em(18);
+		}
+
+		.current-menu-item, .menu-item:hover{
+			a{
+				color: #72664c;
+				background: #f7eacc;
+				background: linear-gradient(180deg, #f7eacc, #cfbe97);
+				box-shadow: 0 2px 1px rgba(0,0,0,.3);
+			}
+		}
+	}
+}
+
+.slider{
+	position: relative;
+	.slides{
+		@include clearfix;
+		list-style: none;
+		margin:0;
+		padding-left: 0;
+
+		li{
+			@include clearfix;
+			float: left;
+			width: 100%;
+			margin-right:-100%;
+			opacity: 0;
+
+			&.flex-active-slide{
+				opacity: 1;
+			}
+
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+
+	.slide-caption{
+		width: 670px;
+		float: left;
+
+		@media screen and (max-width:800px){
+			width: 100%
+		}
+
+		.slide-title{
+			color: white;
+			margin-bottom: 0;
+			font-family: $secondary-font;
+			@include em(60);
+		}
+
+		p{
+			@include em(18);
+			color: white;
+			font-weight: 400;
+			line-height: 30px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.flex-control-paging{
+		position: absolute;
+		bottom:20px;
+		margin: 0;
+		padding-left:0;
+		width: 100%;
+		list-style: none;
+		text-align: center;
+		z-index: 9;
+
+		li{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 0 5px;
+			background: rgba(0,0,0,.3);
+			text-align: center;
+			box-shadow: inset 0 2px 2px rgba(0,0,0,.4), 0 1px 1px rgba(255,255,255,.3);
+			border-radius: 50%;
+			position: relative;
+
+			a{
+				width: 10px;
+				height: 10px;
+				margin: auto;
+				position: absolute;
+				top:0;
+				left:0;
+				bottom:0;
+				right:0;
+				border-radius: 50%;
+				display: block;
+				overflow: hidden;
+				text-indent: -99999px;
+				cursor: pointer;
+
+				&.flex-active{
+					background: #c4d1bb;
+					background: linear-gradient(180deg, #c4d1bb, #aab9a0);
+					box-shadow: 0 2px 2px rgba(0,0,0,.3);
+				}
+			}
+		}
+	}
+}
+
+.page-title{
+	padding: 30px;
+	h2{
+		@include em(48);
+		color: white;
+		margin:0 0 20px;
+		font-family: $secondary-font;
+		text-transform: uppercase;
+	}
+}

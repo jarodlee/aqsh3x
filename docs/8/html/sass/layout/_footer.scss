@@ -1,0 +1,55 @@
+/*
+ * Footer Styles
+ */
+
+.site-footer{
+	background-color: $secondary-color;
+	padding: 50px 0;
+	margin-top: 50px;
+
+	a{
+		color: inherit;
+		transition: .3s ease;
+
+		&:hover{
+			color: $accent-color;
+		}
+	}
+}
+
+.colophon{
+	margin: 50px 0 0;
+}
+
+.widget{margin-bottom: 30px}
+.subscribe-form{
+
+	form{
+		position: relative;
+
+		input[type="submit"]{
+			position: absolute;
+			top:0;
+			bottom:0;
+			right: 0;
+		}
+	}
+	input:not([type="submit"]){
+		width: 100%;
+		color: inherit;
+		border: 2px solid $footer-color;
+		background: none;
+	}
+	input[type="submit"]{
+		float: right;
+		border-color: $footer-color;
+		color: $footer-color;
+		outline: none;
+
+		&:active,&:focus{
+			border-color: $accent-color;
+			color: $accent-color;
+		}
+
+	}
+}

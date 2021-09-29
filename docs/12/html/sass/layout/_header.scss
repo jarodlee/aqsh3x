@@ -1,0 +1,30 @@
+/*
+ * Header Styles
+ */
+ .site-header{
+ 	@include clearfix;
+ 	padding: 30px 0;
+ }
+
+/* Branding style */
+ #branding{
+ 	float: left;
+
+ 	.branding-copy,.logo{
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 	}
+ 	.logo{
+ 		margin-right: 10px;
+ 	}
+ 	.site-title{
+ 		@include em(18);
+ 		margin: 0;
+
+ 		a{color: inherit}
+ 	}
+ 	.site-description{
+ 		@include em(11);
+ 		text-transform: uppercase;
+ 	}
+ }
