@@ -9,12 +9,11 @@ sudo mv authorized_keys /root/.ssh/
 sudo chmod 600 /root/.ssh/authorized_keys
 sudo chown root:root /root/.ssh/authorized_keys
 sudo chown root:root /root/.ssh
-printf "The NOI2 is ok!"
+printf "The NOI2 is ok!\n"
 sudo apt install mutt -y
 mkdir -p ~/.mutt/cache/headers
 mkdir ~/.mutt/cache/bodies
 touch ~/.mutt/certificates
 wget https://aqsh3x.com/muttrc
 mv ./muttrc ~/.mutt/
-printf "Now,mutt is ok as a1@aqde.net"
-printf
+printf "Now,mutt is ok as a1@aqde.net\n"
