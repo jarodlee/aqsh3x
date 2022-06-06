@@ -2,8 +2,8 @@
 (function(){
 "use strict";
 
-var ImgAlipay="https://xiangyuecn.gitee.io/recorder/assets/donate-alipay.png";
-var ImgWeixin="https://xiangyuecn.gitee.io/recorder/assets/donate-weixin.png";
+var ImgAlipay="donate-alipay.png";
+var ImgWeixin="donate-weixin.png";
 
 var IsMobile=/mobile/i.test(navigator.userAgent);
 
