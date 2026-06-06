@@ -1,4 +1,23 @@
 
+<?php
+$probeUser = getenv('TZ_PROBE_USER');
+$probePassword = getenv('TZ_PROBE_PASSWORD');
+
+if (!$probeUser || !$probePassword) {
+    http_response_code(403);
+    exit('Server probe is protected. Set TZ_PROBE_USER and TZ_PROBE_PASSWORD on the server.');
+}
+
+$requestUser = $_SERVER['PHP_AUTH_USER'] ?? '';
+$requestPassword = $_SERVER['PHP_AUTH_PW'] ?? '';
+
+if (!hash_equals($probeUser, $requestUser) || !hash_equals($probePassword, $requestPassword)) {
+    header('WWW-Authenticate: Basic realm="Server Probe"');
+    http_response_code(401);
+    exit('Authentication required.');
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
